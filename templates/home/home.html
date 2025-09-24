@@ -1,0 +1,396 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h2>Transform Your Pool in Just 10 Days</h2>
+            <p>Professional fiberglass pool renovations across Brisbane, Gold Coast, and Sunshine Coast. Quality service with durable, long-lasting results.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="openContactForm()">Get Free Quote</button>
+                <button class="btn-secondary" onclick="scrollToSection('services')">Our Services</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- Placeholder for hero image -->
+            <div class="image-placeholder hero-placeholder">
+                <i class="fas fa-swimming-pool"></i>
+                <p>Hero Pool Image</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>About Us</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>We are specialists in fiberglass pool painting, osmosis treatment, structural repairs, and complete resurfacing. Our mission is to give pools a brand-new life, with quality service and durable results across Brisbane, Gold Coast, and Sunshine Coast.</p>
+                <div class="about-stats">
+                    <div class="stat fade-in-up">
+                        <h3>500+</h3>
+                        <p>Pools Renovated</p>
+                    </div>
+                    <div class="stat fade-in-up">
+                        <h3>10</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat fade-in-up">
+                        <h3>100%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <!-- Placeholder for about image -->
+                <div class="image-placeholder">
+                    <i class="fas fa-tools"></i>
+                    <p>Team at Work</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <div class="section-divider"></div>
+            <p>Professional pool renovation services with guaranteed quality and durability</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in-up">
+                <div class="service-image">
+                    <!-- Placeholder for painting service image -->
+                    <div class="image-placeholder">
+                        <i class="fas fa-paint-roller"></i>
+                        <p>Pool Painting</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Painting</h3>
+                    <p>Durable and resistant pool painting with a flawless finish.</p>
+                    <ul>
+                        <li>High-quality fiberglass paint</li>
+                        <li>UV and chemical resistant</li>
+                        <li>5-year warranty</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card fade-in-up">
+                <div class="service-image">
+                    <!-- Placeholder for osmosis treatment image -->
+                    <div class="image-placeholder">
+                        <i class="fas fa-droplet"></i>
+                        <p>Osmosis Treatment</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Osmosis Treatment</h3>
+                    <p>Professional correction of bubbles and infiltrations.</p>
+                    <ul>
+                        <li>Complete moisture removal</li>
+                        <li>Structural integrity restoration</li>
+                        <li>Long-term protection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card fade-in-up">
+                <div class="service-image">
+                    <!-- Placeholder for repairs image -->
+                    <div class="image-placeholder">
+                        <i class="fas fa-hammer"></i>
+                        <p>Pool Repairs</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Repairs</h3>
+                    <p>Fixing holes, cracks, and structural issues.</p>
+                    <ul>
+                        <li>Crack and hole repair</li>
+                        <li>Structural reinforcement</li>
+                        <li>Waterproofing solutions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card fade-in-up">
+                <div class="service-image">
+                    <!-- Placeholder for resurfacing image -->
+                    <div class="image-placeholder">
+                        <i class="fas fa-layer-group"></i>
+                        <p>Full Resurfacing</p>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <h3>Full Resurfacing</h3>
+                    <p>Complete renovation and resurfacing for full restoration.</p>
+                    <ul>
+                        <li>Complete surface renewal</li>
+                        <li>Modern finish options</li>
+                        <li>Like-new appearance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="process" class="process">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Process</h2>
+            <div class="section-divider"></div>
+            <p>Simple, transparent process from assessment to completion</p>
+        </div>
+        <div class="process-steps">
+            <div class="step fade-in-up">
+                <div class="step-number">1</div>
+                <div class="step-icon">
+                    <!-- Placeholder for step 1 icon/image -->
+                    <div class="image-placeholder step-placeholder">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <h3>Pool Assessment and Quote</h3>
+                    <p>Comprehensive evaluation of your pool's condition and detailed quote preparation.</p>
+                </div>
+            </div>
+
+            <div class="step fade-in-up">
+                <div class="step-number">2</div>
+                <div class="step-icon">
+                    <!-- Placeholder for step 2 icon/image -->
+                    <div class="image-placeholder step-placeholder">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <h3>Surface Preparation and Repairs</h3>
+                    <p>Thorough cleaning, surface preparation, and necessary structural repairs.</p>
+                </div>
+            </div>
+
+            <div class="step fade-in-up">
+                <div class="step-number">3</div>
+                <div class="step-icon">
+                    <!-- Placeholder for step 3 icon/image -->
+                    <div class="image-placeholder step-placeholder">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <h3>Treatment Application</h3>
+                    <p>Professional application of treatment, painting, or resurfacing materials.</p>
+                </div>
+            </div>
+
+            <div class="step fade-in-up">
+                <div class="step-number">4</div>
+                <div class="step-icon">
+                    <!-- Placeholder for step 4 icon/image -->
+                    <div class="image-placeholder step-placeholder">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <h3>Final Inspection</h3>
+                    <p>Quality control inspection and your pool ready to use and enjoy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="container">
+        <div class="section-header">
+            <h2>Before &amp; After</h2>
+            <div class="section-divider"></div>
+            <p>See the amazing transformations we've achieved</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in-up">
+                <div class="image-placeholder gallery-placeholder">
+                    <i class="fas fa-images"></i>
+                    <p>Before/After Example 1</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in-up">
+                <div class="image-placeholder gallery-placeholder">
+                    <i class="fas fa-images"></i>
+                    <p>Before/After Example 2</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in-up">
+                <div class="image-placeholder gallery-placeholder">
+                    <i class="fas fa-images"></i>
+                    <p>Before/After Example 3</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in-up">
+                <div class="image-placeholder gallery-placeholder">
+                    <i class="fas fa-images"></i>
+                    <p>Before/After Example 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Fiberglass Pool Renovations Brisbane</h3>
+                <p>Your new pool in up to 10 days</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Pool Painting</a></li>
+                    <li><a href="#services">Osmosis Treatment</a></li>
+                    <li><a href="#services">Pool Repairs</a></li>
+                    <li><a href="#services">Full Resurfacing</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Service Areas</h4>
+                <ul>
+                    <li>Brisbane</li>
+                    <li>Gold Coast</li>
+                    <li>Sunshine Coast</li>
+                    <li>Surrounding Areas</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> (07) 1234 5678</p>
+                <p><i class="fas fa-envelope"></i> info@poolrenovations.com.au</p>
+                <p><i class="fas fa-map-marker-alt"></i> Brisbane, QLD</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Fiberglass Pool Renovations Brisbane. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<div id="floating-form" class="floating-form">
+    <div class="form-toggle" onclick="toggleContactForm()">
+        <i class="fas fa-envelope"></i>
+        <span>Get Quote</span>
+    </div>
+    <div class="form-container" id="form-container">
+        <div class="form-header">
+            <h3>Get Your Free Quote</h3>
+            <button class="close-form" onclick="closeContactForm()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <form id="contact-form" class="contact-form">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required="">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required="">
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Address (Suburb / Postcode) *</label>
+                <input type="text" id="address" name="address" required="">
+            </div>
+            
+            <div class="form-group">
+                <label for="poolSize">Pool Size (liters or m³)</label>
+                <input type="text" id="poolSize" name="poolSize">
+            </div>
+            
+            <div class="form-group">
+                <label for="poolAge">Pool Age (years)</label>
+                <input type="number" id="poolAge" name="poolAge" min="0">
+            </div>
+            
+            <div class="form-group">
+                <label>Services Required:</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="services" value="painting">
+                        <span class="checkmark"></span>
+                        Painting
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="services" value="osmosis">
+                        <span class="checkmark"></span>
+                        Osmosis Treatment
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="services" value="repairs">
+                        <span class="checkmark"></span>
+                        Repairs (holes/cracks)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="services" value="resurfacing">
+                        <span class="checkmark"></span>
+                        Resurfacing / Full Renovation
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="photos">Pool Photos (up to 3)</label>
+                <input type="file" id="photos" name="photos" accept="image/*" multiple="">
+                <div class="file-info">
+                    <small>Upload up to 3 photos of your pool (JPG, PNG, max 5MB each)</small>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                Send Quote Request
+            </button>
+        </form>
+        
+        <div id="form-message" class="form-message"></div>
+    </div>
+</div>
+
+<div class="mobile-menu-overlay" id="mobile-menu">
+    <div class="mobile-menu-content">
+        <button class="close-mobile-menu" onclick="closeMobileMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="mobile-nav">
+            <a href="#about" onclick="closeMobileMenu()">About</a>
+            <a href="#services" onclick="closeMobileMenu()">Services</a>
+            <a href="#process" onclick="closeMobileMenu()">Process</a>
+            <a href="#contact" class="cta-button" onclick="closeMobileMenu(); openContactForm()">Get Quote</a>
+        </nav>
+    </div>
+</div>
+
+{% endblock %}

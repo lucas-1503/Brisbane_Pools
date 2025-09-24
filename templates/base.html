@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    {% block css %}
+
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+
+    <header class="header" style="transform: translateY(0px); box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Fiberglass Pool Renovations Brisbane</h1>
+                    <p class="slogan">Your new pool in up to 10 days</p>
+                </div>
+                <nav class="nav">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#process">Process</a>
+                    <a href="#contact" class="cta-button">Get Quote</a>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+    {% block scripts %}
+
+    {% endblock %}
+</body>
+</html>
