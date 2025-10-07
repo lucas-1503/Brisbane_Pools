@@ -5,6 +5,7 @@ const contactForm = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
 const mobileMenu = document.getElementById('mobile-menu');
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const header = document.querySelector('.header');
 
 // Form state
 let isFormOpen = false;
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeEventListeners();
     initializeScrollEffects();
     initializeFormValidation();
+    initializeFloatingButton();
     
     // Add fade-in animation to sections
     observeElements();
@@ -22,21 +24,29 @@ document.addEventListener('DOMContentLoaded', function() {
 // Event Listeners
 function initializeEventListeners() {
     // Mobile menu toggle
-    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    }
     
     // Close mobile menu when clicking overlay
-    mobileMenu.addEventListener('click', function(e) {
-        if (e.target === mobileMenu) {
-            closeMobileMenu();
-        }
-    });
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+    }
     
     // Form submission
-    contactForm.addEventListener('submit', handleFormSubmission);
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleFormSubmission);
+    }
     
     // File input validation
     const photoInput = document.getElementById('photos');
-    photoInput.addEventListener('change', validateFileUpload);
+    if (photoInput) {
+        photoInput.addEventListener('change', validateFileUpload);
+    }
     
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -54,7 +64,7 @@ function initializeEventListeners() {
     
     // Close form when clicking outside
     document.addEventListener('click', function(e) {
-        if (isFormOpen && !floatingForm.contains(e.target)) {
+        if (isFormOpen && floatingForm && !floatingForm.contains(e.target)) {
             closeContactForm();
         }
     });
@@ -63,36 +73,67 @@ function initializeEventListeners() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             if (isFormOpen) closeContactForm();
-            if (mobileMenu.classList.contains('active')) closeMobileMenu();
+            if (mobileMenu && mobileMenu.classList.contains('active')) closeMobileMenu();
         }
     });
 }
 
+// Floating Button Visibility Control
+function initializeFloatingButton() {
+    if (!floatingForm || !header) return;
+    
+    // Use IntersectionObserver to detect when header is visible
+    const headerObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Header is visible, hide floating button
+                floatingForm.classList.remove('show');
+            } else {
+                // Header is not visible, show floating button
+                floatingForm.classList.add('show');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    headerObserver.observe(header);
+}
+
 // Mobile Menu Functions
 function toggleMobileMenu() {
-    mobileMenu.classList.toggle('active');
+    if (mobileMenu) {
+        mobileMenu.classList.toggle('active');
+    }
 }
 
 function closeMobileMenu() {
-    mobileMenu.classList.remove('active');
+    if (mobileMenu) {
+        mobileMenu.classList.remove('active');
+    }
 }
 
 // Contact Form Functions
 function openContactForm() {
-    formContainer.classList.add('active');
-    isFormOpen = true;
-    
-    // Focus on first input
-    setTimeout(() => {
-        const firstInput = contactForm.querySelector('input');
-        if (firstInput) firstInput.focus();
-    }, 300);
+    if (formContainer) {
+        formContainer.classList.add('active');
+        isFormOpen = true;
+        
+        // Focus on first input
+        setTimeout(() => {
+            const firstInput = contactForm ? contactForm.querySelector('input') : null;
+            if (firstInput) firstInput.focus();
+        }, 300);
+    }
 }
 
 function closeContactForm() {
-    formContainer.classList.remove('active');
-    isFormOpen = false;
-    hideFormMessage();
+    if (formContainer) {
+        formContainer.classList.remove('active');
+        isFormOpen = false;
+        hideFormMessage();
+    }
 }
 
 function toggleContactForm() {
@@ -105,6 +146,8 @@ function toggleContactForm() {
 
 // Form Validation
 function initializeFormValidation() {
+    if (!contactForm) return;
+    
     const inputs = contactForm.querySelectorAll('input[required]');
     
     inputs.forEach(input => {
@@ -226,6 +269,8 @@ function validateFileUpload(e) {
 function handleFormSubmission(e) {
     e.preventDefault();
     
+    if (!contactForm) return;
+    
     // Validate all required fields
     const requiredFields = contactForm.querySelectorAll('input[required]');
     let isValid = true;
@@ -252,7 +297,11 @@ function handleFormSubmission(e) {
 }
 
 function submitForm() {
+    if (!contactForm) return;
+    
     const submitBtn = contactForm.querySelector('.submit-btn');
+    if (!submitBtn) return;
+    
     const originalText = submitBtn.innerHTML;
     
     // Show loading state
@@ -273,8 +322,10 @@ function submitForm() {
         
         // Reset file info
         const fileInfo = document.querySelector('.file-info small');
-        fileInfo.textContent = 'Upload up to 3 photos of your pool (JPG, PNG, max 5MB each)';
-        fileInfo.style.color = '';
+        if (fileInfo) {
+            fileInfo.textContent = 'Upload up to 3 photos of your pool (JPG, PNG, max 5MB each)';
+            fileInfo.style.color = '';
+        }
         
         // Close form after delay
         setTimeout(() => {
@@ -285,6 +336,8 @@ function submitForm() {
 }
 
 function showFormMessage(message, type) {
+    if (!formMessage) return;
+    
     formMessage.textContent = message;
     formMessage.className = `form-message ${type}`;
     formMessage.style.display = 'block';
@@ -296,14 +349,17 @@ function showFormMessage(message, type) {
 }
 
 function hideFormMessage() {
+    if (!formMessage) return;
+    
     formMessage.style.display = 'none';
     formMessage.className = 'form-message';
 }
 
 // Scroll Effects
 function initializeScrollEffects() {
+    if (!header) return;
+    
     let lastScrollTop = 0;
-    const header = document.querySelector('.header');
     
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -345,7 +401,7 @@ function observeElements() {
     }, observerOptions);
     
     // Observe elements for animation
-    const elementsToAnimate = document.querySelectorAll('.service-card, .step, .stat, .gallery-item');
+    const elementsToAnimate = document.querySelectorAll('.service-card, .step, .gallery-item');
     elementsToAnimate.forEach(el => observer.observe(el));
 }
 
@@ -390,7 +446,7 @@ window.addEventListener('scroll', optimizedScrollHandler);
 // Accessibility improvements
 document.addEventListener('keydown', function(e) {
     // Tab navigation for form
-    if (e.key === 'Tab' && isFormOpen) {
+    if (e.key === 'Tab' && isFormOpen && formContainer) {
         const focusableElements = formContainer.querySelectorAll(
             'input, button, select, textarea, [tabindex]:not([tabindex="-1"])'
         );
@@ -413,6 +469,8 @@ document.addEventListener('keydown', function(e) {
 
 // Form auto-save (optional enhancement)
 function autoSaveForm() {
+    if (!contactForm) return;
+    
     const formData = new FormData(contactForm);
     const data = {};
     
@@ -426,6 +484,8 @@ function autoSaveForm() {
 }
 
 function loadSavedForm() {
+    if (!contactForm) return;
+    
     const savedData = localStorage.getItem('poolRenovationForm');
     if (savedData) {
         const data = JSON.parse(savedData);
@@ -448,14 +508,16 @@ document.addEventListener('DOMContentLoaded', loadSavedForm);
 
 // Auto-save form data on input (debounced)
 const debouncedAutoSave = debounce(autoSaveForm, 1000);
-contactForm.addEventListener('input', debouncedAutoSave);
+if (contactForm) {
+    contactForm.addEventListener('input', debouncedAutoSave);
+}
 
 // Clear saved data on successful submission
 function clearSavedForm() {
     localStorage.removeItem('poolRenovationForm');
 }
 
-// Add to successful form submission
+// Override submitForm to clear saved data
 const originalSubmitForm = submitForm;
 submitForm = function() {
     originalSubmitForm();

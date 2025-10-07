@@ -9,6 +9,7 @@
         {% block title %}
         {% endblock %}
     </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     {% block css %}
 
     {% endblock %}
@@ -20,14 +21,17 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <h1>Fiberglass Pool Renovations Brisbane</h1>
-                    <p class="slogan">Your new pool in up to 10 days</p>
+                    <img src="{% static 'img/logo.webp' %}" alt="Fiberglass Pool Renovations Brisbane Logo" class="logo-image">
+                    <div class="logo-text">
+                        <h1>Fiberglass Pool Renovations Brisbane</h1>
+                        <p class="slogan">Your new pool in up to 10 days</p>
+                    </div>
                 </div>
                 <nav class="nav">
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
                     <a href="#process">Process</a>
-                    <a href="#contact" class="cta-button">Get Quote</a>
+                    <a href="#" class="cta-button" onclick="toggleContactForm()">Get Quote</a>
                 </nav>
                 <div class="mobile-menu-toggle">
                     <i class="fas fa-bars"></i>
