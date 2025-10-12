@@ -80,25 +80,10 @@ function initializeEventListeners() {
 
 // Floating Button Visibility Control
 function initializeFloatingButton() {
-    if (!floatingForm || !header) return;
+    if (!floatingForm) return;
     
-    // Use IntersectionObserver to detect when header is visible
-    const headerObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Header is visible, hide floating button
-                floatingForm.classList.remove('show');
-            } else {
-                // Header is not visible, show floating button
-                floatingForm.classList.add('show');
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    headerObserver.observe(header);
+    // Garante que o botão esteja sempre visível
+    floatingForm.classList.add('show');
 }
 
 // Mobile Menu Functions

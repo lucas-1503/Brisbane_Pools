@@ -13,10 +13,10 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Transform Your Pool in Just 10 Days</h2>
+                <h2>Bring Your Fiberglass Pool Back to Life in Just 10 Business days</h2>
                 <p>Professional fiberglass pool renovations across Brisbane, Gold Coast, and Sunshine Coast. Quality service with durable, long-lasting results.</p>
                 <div class="hero-buttons">
-                    <a href="#formulario" class="btn-primary">Get Free Quote</a>
+                    <button class="btn-secondary" onclick="scrollToSection('process')">Our Process</button>
                     <button class="btn-secondary" onclick="scrollToSection('services')">Our Services</button>
                 </div>
             </div>
@@ -34,17 +34,11 @@
                 <div class="section-divider"></div>
             </div>
             <div class="about-content">
-                <div class="about-text">
+                <div class="section-header">
                     <p>We are specialists in fiberglass pool painting, osmosis treatment, structural repairs, and complete resurfacing. Our mission is to give pools a brand-new life, with quality service and durable results across Brisbane, Gold Coast, and Sunshine Coast.</p>
 
                 </div>
-                <div class="about-image">
-                    <!-- Placeholder for about image -->
-                    <div class="image-placeholder">
-                        <i class="fas fa-tools"></i>
-                        <p>Team at Work</p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -188,42 +182,6 @@
         </div>
     </section>
 
-    <!-- Before/After Gallery Section -->
-    <section class="gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Before &amp; After</h2>
-                <div class="section-divider"></div>
-                <p>See the amazing transformations we've achieved</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item fade-in-up">
-                    <div class="image-placeholder gallery-placeholder">
-                        <img class="imagem" src="{% static 'img/pool_before.webp' %}" alt="">
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up">
-                    <div class="image-placeholder gallery-placeholder">
-                        <i class="fas fa-images"></i>
-                        <p>Before/After Example 2</p>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up">
-                    <div class="image-placeholder gallery-placeholder">
-                        <i class="fas fa-images"></i>
-                        <p>Before/After Example 3</p>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up">
-                    <div class="image-placeholder gallery-placeholder">
-                        <i class="fas fa-images"></i>
-                        <p>Before/After Example 4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -231,11 +189,6 @@
                 <div class="footer-section">
                     <h3>Fiberglass Pool Renovations Brisbane</h3>
                     <p>Your new pool in up to 10 days</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
@@ -270,10 +223,7 @@
 
     <!-- Floating Contact Form -->
     <div id="floating-form" class="floating-form">
-        <div class="form-toggle" onclick="toggleContactForm()" aria-label="Get a quote">
-            <i class="fas fa-envelope"></i>
-            <span>Get Quote</span>
-        </div>
+        
         <div class="form-container" id="form-container">
             <div class="form-header">
                 <h3>Get Your Free Quote</h3>
@@ -293,8 +243,18 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="address">Address (Suburb / Postcode) *</label>
+                    <label for="address">Address *</label>
                     <input type="text" id="address" name="address" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="address_number">Number *</label>
+                    <input type="text" id="address_number" name="address_number" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="postal_code">Postal Code *</label>
+                    <input type="text" id="postal_code" name="postal_code" required="">
                 </div>
                 
                 <div class="form-group">
@@ -310,28 +270,31 @@
                 <div class="form-group">
                     <label>Services Required:</label>
                     <div class="checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="services" value="painting">
-                            <span class="checkmark"></span>
-                            Painting
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="services" value="osmosis">
-                            <span class="checkmark"></span>
-                            Osmosis Treatment
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="services" value="repairs">
-                            <span class="checkmark"></span>
-                            Repairs (holes/cracks)
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="services" value="resurfacing">
-                            <span class="checkmark"></span>
-                            Resurfacing / Full Renovation
-                        </label>
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="services" value="painting">
+                        <span class="checkmark"></span>
+                        Painting
+                      </label>
+                  
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="services" value="osmosis">
+                        <span class="checkmark"></span>
+                        Osmosis Treatment
+                      </label>
+                  
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="services" value="repairs">
+                        <span class="checkmark"></span>
+                        Repairs (holes/cracks)
+                      </label>
+                  
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="services" value="resurfacing">
+                        <span class="checkmark"></span>
+                        Resurfacing / Full Renovation
+                      </label>
                     </div>
-                </div>
+                  </div>
                 
                 <div class="form-group">
                     <label for="photos">Pool Photos (up to 3)</label>
@@ -349,6 +312,10 @@
             
             <div id="form-message" class="form-message"></div>
         </div>
+        <div class="form-toggle" onclick="toggleContactForm()" aria-label="Get a quote">
+            <i class="fas fa-envelope"></i>
+            <span>Get Quote</span>
+        </div>
     </div>
 
     <!-- Mobile Menu Overlay -->
@@ -361,7 +328,6 @@
                 <a href="#about" onclick="closeMobileMenu()">About</a>
                 <a href="#services" onclick="closeMobileMenu()">Services</a>
                 <a href="#process" onclick="closeMobileMenu()">Process</a>
-                <a href="#contact" class="cta-button" onclick="closeMobileMenu(); openContactForm()">Get Quote</a>
             </nav>
         </div>
     </div>
