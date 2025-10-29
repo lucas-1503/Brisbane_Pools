@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: www.brisbane.pythonanywhere.com/sitemap.xml

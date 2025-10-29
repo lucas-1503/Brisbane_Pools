@@ -14,6 +14,16 @@ MAX_TOTAL_MB = 12
 def home(request):
     return render(request, "home/home.html")
 
+from django.http import HttpResponse
+
+def robots_txt(_request):
+    content = (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "Sitemap: www.brisbane.pythonanywhere.com/sitemap.xml\n"
+    )
+    return HttpResponse(content, content_type="text/plain")
+
 
 @require_POST
 def quote_request(request):

@@ -211,11 +211,21 @@ body {
     line-height: 1.2;
 }
 
+.hero-content h5{
+    padding-top: 10px;
+}
+
 .hero-content p {
     font-size: var(--font-size-lg);
     color: var(--medium-blue);
     margin-bottom: var(--spacing-8);
     max-width: 500px;
+}
+
+.hero-content ul{
+    list-style: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .hero-img {
@@ -229,6 +239,11 @@ body {
     display: flex;
     gap: var(--spacing-4);
     flex-wrap: wrap;
+    padding-top: 10px;
+}
+
+.text-bold{
+    font-weight: bold;
 }
 
 .btn-primary, .btn-secondary {
@@ -349,7 +364,6 @@ section {
 .section-header p {
     font-size: var(--font-size-lg);
     color: var(--medium-blue);
-    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -996,6 +1010,146 @@ section {
 .mobile-nav a:hover {
     color: var(--primary-blue);
 }
+
+.about-text {
+    --abt-bg: #f7f9fc;
+    --abt-card: #ffffff;
+    --abt-border: #e5eaf2;
+    --abt-text: #1f2736;
+    --abt-muted: #5e6b82;
+    --abt-accent: #0b6efd;
+    --abt-accent-soft: #eef5ff;
+  
+    background: var(--abt-bg);
+    border: 1px solid var(--abt-border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    color: var(--abt-text);
+    line-height: 1.65;
+  }
+  
+  /* Headings */
+  .about-text h3 {
+    margin: 0 0 6px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .2px;
+  }
+  
+  .about-text h4 {
+    margin: 10px 0 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--abt-text);
+  }
+  
+  /* Intro/paragraphs */
+  .about-text p {
+    display: flex;
+    margin: 10px 0;
+    color: var(--abt-muted);
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+  }
+  
+  /* List as tidy “cards” */
+  .about-text ul {
+    margin: 10px 0 12px;
+    padding: 0;
+    list-style: none; /* remover marcadores padrão */
+    display: grid;
+    gap: 8px;
+  }
+  
+  /* 
+    Seus <li> já vêm com “1 -”, “2 -”, “3 -”.
+    Abaixo, escondemos esse prefixo via text-indent e 
+    adicionamos numeração bonita com ::before.
+  */
+  .about-text ul li {
+    position: relative;
+    background: var(--abt-card);
+    border: 1px solid var(--abt-border);
+    border-radius: 10px;
+    padding: 10px ;
+    color: var(--abt-text);
+  
+
+    overflow: hidden;         /* evita scroll horizontal do texto “oculto” */
+  }
+  
+  /* Reseta e gera numeração visual */
+  .about-text ul {
+    counter-reset: stage;
+  }
+  .about-text ul li::before {
+    counter-increment: stage;
+    content: counter(stage);
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font: 700 12px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--abt-accent);
+    background: var(--abt-accent-soft);
+    border: 1px solid rgba(11,110,253,.18);
+  }
+  
+  /* Destaques rápidos dentro do texto */
+  .about-text strong {
+    color: var(--abt-text);
+    font-weight: 700;
+  }
+  
+  /* “Legal Notice” como chamada (aplica ao segundo h4 e parágrafo logo após) */
+  .about-text h4:nth-of-type(2) + p {
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--abt-accent);
+    background: linear-gradient(90deg, rgba(11,110,253,.08), transparent 65%);
+    border-radius: 8px;
+    color: var(--abt-muted);
+  }
+
+  .footer-bottom { text-align:center; }
+.footer-bottom .icon-heart{
+  width: 1em; height: 1em;      /* acompanha o tamanho do texto */
+  vertical-align: -0.15em;       /* alinha com a linha do texto */
+  margin: 0 .25em;
+  color: #ff3b3b;                /* COR do coração (pode trocar) */
+}
+
+/* (opcional) animação de “pulse” */
+.footer-bottom .icon-heart{ animation: pulse 1.2s ease-in-out infinite; transform-origin:center; }
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.15)} }
+  
+  /* Acessórios de responsividade */
+  @media (max-width: 480px) {
+    .about-text { padding: 16px; }
+    .about-text ul li { padding-left: 40px; }
+    .about-text ul li::before { left: 10px; }
+  }
+  
+  /* Modo escuro automático (opcional) */
+  @media (prefers-color-scheme: dark) {
+    .about-text {
+      --abt-bg: #0f1420;
+      --abt-card: #0b1020;
+      --abt-border: #20283a;
+      --abt-text: #e7ecf6;
+      --abt-muted: #a8b1c2;
+      --abt-accent: #62a1ff;
+      --abt-accent-soft: rgba(98,161,255,0.18);
+    }
+  }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
