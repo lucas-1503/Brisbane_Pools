@@ -14,8 +14,8 @@ SECRET_KEY = 'django-insecure-2k&&ip(3hd70tiy41d$ktka@^*5t^%88f!onk!z=0gtd_&9(up
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["brisbane.pythonanywhere.com", "www.brisbane.pythonanywhere.com","127.0.0.1",'fiberglasspoolrenovationsbrisbane.com.au',
-    'www.fiberglasspoolrenovationsbrisbane.com.au','31.220.107.190']
+ALLOWED_HOSTS = ['fiberglasspoolrenovationsbrisbane.com.au','www.fiberglasspoolrenovationsbrisbane.com.au']
+CSRF_TRUSTED_ORIGINS = ['https://fiberglasspoolrenovationsbrisbane.com.au','https://www.fiberglasspoolrenovationsbrisbane.com.au']
 
 
 # Application definition
@@ -135,3 +135,11 @@ EMAIL_HOST_PASSWORD = "vwro otbk ncnw fzkq"
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 QUOTE_TO_EMAIL = "brisbanefibreglasspools@gmail.com"
+
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+# quando tiver tudo 100% em HTTPS, ative HSTS:
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
