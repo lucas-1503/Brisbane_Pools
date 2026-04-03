@@ -1127,6 +1127,39 @@ section {
   color: #ff3b3b;                /* COR do coração (pode trocar) */
 }
 
+.floating-call {
+    background: rgb(22, 255, 22);
+    color: var(--white);
+    padding: var(--spacing-4) var(--spacing-6);
+    border-radius: var(--radius-xl);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-fast);
+    font-weight: 600;
+    margin-left: auto;
+    width: fit-content;
+    height: 30px;
+    z-index: 1000;
+    display: none;
+    margin-top: 7px;
+    text-decoration: none;
+}
+
+/* hover */
+.floating-call:hover {
+    background: #1ebe5d;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .floating-call {
+        display: flex;
+    }
+}
+
 /* (opcional) animação de “pulse” */
 .footer-bottom .icon-heart{ animation: pulse 1.2s ease-in-out infinite; transform-origin:center; }
 @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.15)} }
