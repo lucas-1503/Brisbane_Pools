@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-2k&&ip(3hd70tiy41d$ktka@^*5t^%88f!onk!z=0gtd_&9(up
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fiberglasspoolrenovationsbrisbane.com.au','www.fiberglasspoolrenovationsbrisbane.com.au','127.0.0.1']
+ALLOWED_HOSTS = ['fiberglasspoolrenovationsbrisbane.com.au','www.fiberglasspoolrenovationsbrisbane.com.au','127.0.0.1','brisbane.pythonanywhere.com']
 CSRF_TRUSTED_ORIGINS = ['https://fiberglasspoolrenovationsbrisbane.com.au','https://www.fiberglasspoolrenovationsbrisbane.com.au']
 
 
